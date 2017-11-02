@@ -1,0 +1,96 @@
+%%
+%% Author: thompson
+%% 02.11.17
+%%
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{a4wide}
+\usepackage{verbatim}       % Package for "Sourcecode"
+\usepackage{scrextend}
+\usepackage{enumerate}
+
+
+% FIXME: Linkreferences by footnotes are buggy
+% Document
+\begin{document}
+    \section{JS and DOM Basics}
+    \begin{enumerate}[\thesection .1]
+        \item What is the purpose of Javascript and how does it complement HTML and CSS?\footnote[1]{Src.: $https://www.w3schools.com/js/js\_whereto.asp $}
+        Javascript gilt als Programmiersprache, ähnlich wie Java, Rust, php, ....
+        Javascript wird mithilfe des $<$script$>$-Tags in ein HTML-Dokument eingebunden.
+        Ein externales sowie internales Einbinden von Javascript ist zu jeder Zeit möglich, egal ob es sich dabei um Sourcecode
+        innerhalb des Head oder des Body befindet. (Siehe demoHTML.html)
+
+        \begin{verbatim}
+        <!DOCTYPE html>
+          <html>
+            <head>
+            <script src="demoJS.js"></script>
+            </head>
+
+            <body>
+              <h1>A Web Page</h1>
+              <p id="demo">A Paragraph</p>
+              <button type="button" onclick="myFunction()">Try it</button>
+
+            </body>
+          </html>
+        \end{verbatim}
+        Mithilfe von JS lassen sich Funktionen effizient schreiben.
+        Es gilt dabei zu beachten, dass es zu den guten Praktiken gehört, JS-Code von HTML und CSS zu trennen.
+        Dementsprechend ist ein externales Einbinden anstrebbar.
+        \begin{enumerate}
+            \item[$\diamond$] Vorteile und Nachteile von Internen Code
+            \begin{enumerate}
+                \item[+] Schnelles Testing \& Debuggen
+                \item[-] Lange Quellcodes führen zu unübersichtlichen Code
+                \item[-] Langer Wartungsaufwand bei dupliziertem Quellcode
+            \end{enumerate}
+
+            \item[$\diamond$] Vorteile und Nachteile von Externem Code
+            \begin{enumerate}
+                \item[+] Übersichtlicher Code
+                \item[+] Kurzer Wartungsaufwand
+                \item[+] Zwischengespeicherter JS-Code beschleunigt Ladezeiten
+            \end{enumerate}
+        \end{enumerate}
+
+        \item What kind of typing is provided by Javascript? What are the risks?\footnote[2]{Src.: $https://www.w3schools.com/js/js\_type\_conversion.asp$}
+        In Javascript unterscheidet man zwischen folgenden
+        \begin{addmargin}[1em]{1em}
+            Typen:
+            \begin{enumerate}[$\circ$]
+                \item String
+                \item Number
+                \item Boolean
+                \item Object
+                \item Function
+                \item null
+                \item undefined
+            \end{enumerate}
+
+            Objekten:
+            \begin{enumerate}[$\circ$]
+                \item Object
+                \item Date
+                \item Array
+            \end{enumerate}
+
+
+
+
+        \end{addmargin}
+
+
+
+        \item What is DOM?
+
+    \end{enumerate}
+
+
+
+
+\end{document}

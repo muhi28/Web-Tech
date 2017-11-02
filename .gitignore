@@ -1,1 +1,8 @@
-*.agdai
+*.aux
+*.log
+*.out
+
+.gitignore
+
+.idea/
+Repo_WebTech.iml

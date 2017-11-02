@@ -38,5 +38,6 @@ document.write("Type of person = new Object() is: " + typeof person + "<br>");
 document.write("Type of alphabet = ['A','B','C','D'] is " + typeof alphabet + "<br>");
 document.write("Type of undefined 'param' is: " + typeof param + "<br>");
 document.write("Type of typeof function(){} is: " + typeof function(){} + "<br>");
+document.write("Type of true is: " + typeof true + "<br>");
 
 // What the fuck even

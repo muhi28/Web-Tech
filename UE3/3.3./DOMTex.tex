@@ -1,0 +1,73 @@
+%%
+%% Author: thompson
+%% 03.11.17
+%%
+
+% Preamble
+\documentclass[11pt]{article}
+
+% Packages
+\usepackage{a4wide}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumerate}
+\usepackage{verbatim}
+\usepackage{scrextend}
+
+% Document
+\begin{document}
+    \section{Explanation of DOM-Tree}
+    \emph{Siehe Beiligendes .js und .html}
+    \begin{verbatim}
+        var link = document.getElementsByTagName("a")[2];
+    \end{verbatim}
+    Liest Elemente des .html ein welches das .js einbindet, dessen Element-Tag $<$a$>$ ist.
+    Eingelesene Daten werden in einem Array abgelegt, welches als 'link' definiert wird.
+
+    Für unser .html, welches so aussieht:
+    \begin{verbatim}
+        <a href="http://www.orf.at/" target="_new">Link zum ORF</a><br>
+        <a href="http://www.sms.at" target="_new">Link zu sms.at</a><br>
+        <a href="http://www.aau.at" target="_new">Link zur AAU Seite</a>
+    \end{verbatim}
+    .. werden die Link-Adressen http://* in das oben definierte Array eingelesen.
+
+    \begin{enumerate}[1]
+        \item Block:
+        \begin{verbatim}
+            alert (link.attributes["href"].nodeValue);
+            alert (link.getAttributeNode("href").nodeValue);
+            alert (link.href);
+        \end{verbatim}
+        Die erste Zeile\\
+        Die zweite Zeile\\
+        Die dritte Zeile\\
+
+        \item Block:
+        \begin{verbatim}
+            alert(link.firstChild.data);
+        \end{verbatim}
+            Stuff about it
+        \item Block:
+        \begin{verbatim}
+            alert (link.attributes[0].nodeType);
+            alert (link.firstChild.nodeType);
+        \end{verbatim}
+        Stuff about that
+        \item Block:
+        \begin{verbatim}
+            alert(link.parentNode.nodeName);
+            alert(link.lastChild.parentNode.nodeName);
+        \end{verbatim}
+        stuff about that too
+        \item Block:
+        \begin{verbatim}
+            alert(link.attributes.length);
+        \end{verbatim}
+        And stuff about that
+    \end{enumerate}
+
+
+
+\end{document}

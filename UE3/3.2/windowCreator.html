@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>A new Window opens!</title>
-    <link type="text/css" href="windowCreator.css">
+    <link type="text/css" href="windowCreator.css" rel="stylesheet">
     <script src="windowCreator.js"></script>
 
 </head>
 <body>
-    <fieldset id="opener">
+    <fieldset id="container">
         <label>URL: </label>
-        <input id="url" type="text" size="50">
+        <input class="read" id="url" type="text" size="50">
         <br>
         <label>Size x:</label>
-        <input id="x" type="number" size="50">
+        <input class="read" id="x" type="number" size="50">
         <br>
         <label>Size y:</label>
-        <input id="y" type="number" size="50">
+        <input class="read" id="y" type="number" size="50">
         <br>
         <label>Title:</label>
-        <input id="title" type="text" size="50">
+        <input class="read" id="title" type="text" size="50">
     </fieldset>
 
     <input class="button" name="SubmitMe" type="submit" value="Submit!" onclick="return popup()"/>

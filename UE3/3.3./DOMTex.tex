@@ -14,60 +14,74 @@
 \usepackage{enumerate}
 \usepackage{verbatim}
 \usepackage{scrextend}
+\usepackage{mathtools}
 
 % Document
 \begin{document}
     \section{Explanation of DOM-Tree}
-    \emph{Siehe Beiligendes .js und .html}
-    \begin{verbatim}
-        var link = document.getElementsByTagName("a")[2];
-    \end{verbatim}
-    Liest Elemente des .html ein welches das .js einbindet, dessen Element-Tag $<$a$>$ ist.
-    Eingelesene Daten werden in einem Array abgelegt, welches als 'link' definiert wird.
-
+    \emph{Siehe Beiligendes .js und .html}\\
     Für unser .html, welches so aussieht:
     \begin{verbatim}
         <a href="http://www.orf.at/" target="_new">Link zum ORF</a><br>
         <a href="http://www.sms.at" target="_new">Link zu sms.at</a><br>
         <a href="http://www.aau.at" target="_new">Link zur AAU Seite</a>
+        <script src="DOMTree.js"></script>
     \end{verbatim}
-    .. werden die Link-Adressen http://* in das oben definierte Array eingelesen.
+    .. wurde ein .js definiert, welches in das .html eingebunden wird.
 
-    \begin{enumerate}[1]
-        \item Block:
+    Das .js beginnt mit:
+    \begin{verbatim}
+        var link = document.getElementsByTagName("a")[2];
+    \end{verbatim}
+    .. einer Schaffung und Wertzuweisung der Variable 'link'.
+    'link' wird dem 3. Element des Arrays gleichgesetzt, welches rechtsseitiger definiert wird.\\
+    e.g.: var link = urls[2] -- $<a> this.data </a>$
+    \begin{enumerate}[$\diamond$]
+        \item Block 1
         \begin{verbatim}
-            alert (link.attributes["href"].nodeValue);
-            alert (link.getAttributeNode("href").nodeValue);
-            alert (link.href);
+        alert (link.attributes["href"].nodeValue);
+        alert (link.getAttributeNode("href").nodeValue);
+        alert (link.href);
         \end{verbatim}
-        Die erste Zeile\\
-        Die zweite Zeile\\
-        Die dritte Zeile\\
+        Alle 3 Zeilen machen dasselbe: Sie geben das Arugment des href-Wertes wieder.
+        link.attributes["href"].nodeValue greift direkt auf den Link zu, welcher in href="..." steht.
+        link.getAttributeNode("href").nodeValue greift über die Attributsnode "href" zu und schnappt sich dessen Wert: Der Text von href="x".
+        link.href ist der spezifischte Zugriff, direkt auf href des Links.
 
-        \item Block:
+        \item Block 2
         \begin{verbatim}
             alert(link.firstChild.data);
         \end{verbatim}
-            Stuff about it
-        \item Block:
+        Diese Zeile gibt die Kind-Data wieder, in unserem Link ist das der inbeschriebene Text:
+        'Link zur AAU Seite'
+
+        \item Block 3
         \begin{verbatim}
             alert (link.attributes[0].nodeType);
             alert (link.firstChild.nodeType);
         \end{verbatim}
-        Stuff about that
-        \item Block:
+        Die erste Zeile dieses Blocks beschreibt den NodeType, welcher 2 ist.
+        '2' steht hier ledigich für ein Element, dessen Attribute per se beschrieben werden mit '2'.
+        Gemäß Standart (DOM-L4), gibt diese Abfrage immer 2 zurück.\footnote[1]{$https://developer.mozilla.org/de/docs/Web/API/Node/nodeType$}
+        Zweitere gibt den Typ des ersten Kindes wieder. Das Kind unseres $<a></a>$ ist der darinliegende Text.
+        Die Attributszahl von Text ist 3.
+
+        \item Block 4
         \begin{verbatim}
             alert(link.parentNode.nodeName);
             alert(link.lastChild.parentNode.nodeName);
         \end{verbatim}
-        stuff about that too
-        \item Block:
+        Die erste Zeile beschreibt den Namen des Parent-Node. Der Parent-Node unseres $<a></a>$ ist der $<body></body>$,
+        dementsprechend liefert dies BODY zurück.
+        ParentNode.nodeName gibt den Namen der Parent-Node des letzten Kindsknoten wieder.
+        Hier 'A'.
+
+        \item Block 5:
         \begin{verbatim}
             alert(link.attributes.length);
         \end{verbatim}
-        And stuff about that
+        Diese Zeile gibt lediglich die Anzahl der Attribute wieder, die im Link spezifiziert wurden.
+        mit href und target bestehen hier 2 Attribute, wodurch der Wert 2 ist.
+
     \end{enumerate}
-
-
-
 \end{document}

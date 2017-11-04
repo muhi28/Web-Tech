@@ -1,0 +1,15 @@
+.slides {
+
+    display: none;
+    width: 100%
+}
+
+.animate-left {
+
+    position: relative;
+    animation:  animateleft 0.8s;
+}
+
+ @keyframes animateleft {
+    from { left : -500px; opacity: 0} to {left: 0; opacity: 1}
+ }

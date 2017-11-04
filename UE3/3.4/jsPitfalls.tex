@@ -38,6 +38,30 @@
         \includegraphics[width=\textwidth]{jsRegex.jpg}
     \end{center}
 
+    \subsection{Objects}
+    Objectdeclaration in Javas@\#t is really goddamn alienlike.
+    \begin{verbatim}
+        var car = {
+            type:"Fiat",
+            model:"500",
+            color:"white"
+        };
+    \end{verbatim}
+    or in 1 Line:
+    \begin{verbatim}
+        var car = {type:"Fiat", model:"500", color:"white"};
+    \end{verbatim}
+    Access via object.attribute.
+    Don't ever try to leave this heresy in your code:
+    \begin{verbatim}
+        var x = new String(); || new Number(); || new Boolean();
+    \end{verbatim}
+
+    You could've just global-var that sucker. But!
+    \begin{verbatim}
+        Do NOT create global variables unless you intend to.
+    \end{verbatim}
+
     \subsection{Calling Functions}
     There is no 'get-over-here by Reference', unless objectified like women.
     \begin{verbatim}
@@ -60,4 +84,5 @@
         console.log(object2); //output: Object {item:"bike"}
         console.log(number1); //ouput: 10
     \end{verbatim}
+
 \end{document}

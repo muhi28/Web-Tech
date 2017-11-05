@@ -1,21 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Picture Slideshow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="slideshow.js" rel="script" type="text/javascript"></script>
-</head>
-<body onload=" return slider()">
+    <link type="text/css" href="style.css" rel="stylesheet">
 
-    <div>
-        
-        <img class="slides animate-left" src="p1.png"/>
-        <img class="slides animate-left" src="p2.png"/>
-        <img class="slides animate-left" src="p3.png"/>
-        <img class="slides animate-left" src="p4.png"/>
-        <img class="slides animate-left" src="p5.png"/>
-        <img class="slides animate-left" src="p6.png"/>
+</head>
+<body>
+
+<h2>Automatic Slideshow</h2>
+<p>Change image every second:</p>
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 6</div>
+        <img src="p1.png" style="width:50%">
+        <div class="text">Caption Text</div>
     </div>
 
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 6</div>
+        <img src="p2.png" style="width:50%">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 6</div>
+        <img src="p3.png" style="width:50%">
+        <div class="text">Caption Three</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">4 / 6</div>
+        <img src="p4.png" style="width:50%">
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">5 / 6</div>
+        <img src="p5.png" style="width:50%">
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+        <div class="numbertext">6 / 6</div>
+        <img src="p6.png" style="width:50%">
+        <div class="text">Caption Three</div>
+    </div>
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+</div>
+
+<script type="text/javascript">
+    showSlides();
+</script>
 </body>
 </html>

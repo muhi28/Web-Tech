@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slideshow 2.0</title>
+    <link href="slideshowStyle.css" type="text/css" rel="stylesheet"/>
+    <script src="slideshowScript.js" type="text/javascript" rel="script"></script>
+</head>
+<body>
+   <div id="container">
+       <div id="slideshow-container">
+           <span class="picture">
+               <img src="../3.5.1/p1.png">
+           </span>
+           <span class="picture">
+               <img src="../3.5.1/p2.png">
+           </span>
+           <span class="picture">
+               <img src="../3.5.1/p3.png">
+           </span>
+           <span class="picture">
+               <img src="../3.5.1/p4.png">
+           </span>
+           <span class="picture">
+               <img src="../3.5.1/p5.png">
+           </span>
+           <span class="picture">
+               <img src="../3.5.1/p6.png">
+           </span>
+       </div>
+
+       <div id="button-container">
+           <span class="button" onclick="return setPrevious()"><<</span>
+           <span class="button" onclick="return playShow()">Play</span>
+           <span class="button" onclick="return pauseShow()">Pause</span>
+           <span class="button" onclick="return setNext()">>></span>
+       </div>
+   </div>
+</body>
+</html>

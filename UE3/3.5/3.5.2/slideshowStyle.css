@@ -1,0 +1,17 @@
+#slideshow-container{
+    border: 0.125em solid black;
+}
+
+#button-container{
+    padding: 0.5em;
+    text-align: center;
+}
+
+.button{
+    padding: 0.125em;
+    border: 0.125em solid black;
+}
+
+.picture{
+    display: none;
+}

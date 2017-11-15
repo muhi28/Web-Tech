@@ -1,39 +1,45 @@
 var pictures = document.getElementsByClassName("mySlides");
-var index = 1;
+window.index = 1;
 var run = 0;
 
 function playShow() {
-    this.window.alert("Pressed Play.");
+    console.log("Echo: Index:" + index + "\n\t")
+    //this.window.alert("Pressed Play.");
     run = 1;
-    do{
-        setTimeout(playShow(), 5000);
-    if(index < 1){
-        index = pictures.length;
-    }
-    if(index > pictures.length){
-        index = 1;
-    }
-    for(slideIndex; slideIndex<pictures.length;){
-        pictures[slideIndex].style.display = "none";
-        pictures[++slideIndex].style.display = "active";
-    }
-    }while(run!==0);
+    index += 1;
+        if(index < 1){
+            index = pictures.length;
+        }
+        if(index > pictures.length){
+            index = 1;
+        }
+        for(index; index<pictures.length;){
+            pictures[index].style.display = "none";
+            pictures[++index].style.display = "active";
+        }
+
+        if(run === 1){
+        	console.log("setTimeout() : " + run + "\n\tCurrent Index: " + index);
+        }else{
+
+        }
 
 
 }
 
 function pauseShow() {
-    this.window.alert("Pressed Pause.");
+    //this.window.alert("Pressed Pause.");
     run = 0;
+    console.log("PauseShow() : " + run + "\n\tCurrent Index: " + index);
 }
 
 function setNext(){
-    this.window.alert("Pressed Next.");
+    //this.window.alert("Pressed Next.");
     index += 1;
-    playShow();
+    console.log("setNext() : " + run + "\n\tCurrent Index: " + index);
 }
 function setPrevious(){
-    this.window.alert("Pressed Previous.");
+    //this.window.alert("Pressed Previous.");
     index -= 1;
-    playShow();
+    console.log("setPrevious() : " + run + "\n\tCurrent Index: " + index);
 }
